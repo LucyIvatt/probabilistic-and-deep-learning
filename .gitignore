@@ -130,3 +130,5 @@ dmypy.json
 
 images/
 *.tif
+
+cgan_weights/
