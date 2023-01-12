@@ -49,14 +49,14 @@ class SymbolClassifier(nn.Module):
         return x
 
 
-def classify(images):
+def classify(images, weight_location):
     device = torch.device("cuda" if images.is_cuda else "cpu")
     model = SymbolClassifier()
     model = model.to(device)
 
     # Load network weights
     model.load_state_dict(torch.load(
-        'weights.pkl', map_location=torch.device(device)))
+        weight_location, map_location=torch.device(device)))
 
     # Put model in evaluation mode
     model.eval()
