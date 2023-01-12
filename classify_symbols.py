@@ -1,7 +1,5 @@
 import torch
 import torch.nn as nn
-from torchvision import transforms
-from PIL import Image
 
 
 class SymbolClassifier(nn.Module):
@@ -9,7 +7,6 @@ class SymbolClassifier(nn.Module):
         super(SymbolClassifier, self).__init__()
 
         self.ConvolutionalLayers = nn.Sequential(
-
             # First convolutional layer
             nn.Conv2d(in_channels=1, out_channels=12, kernel_size=3,
                       stride=1, padding=1),  # output size = B × 12 × 48 x 48
